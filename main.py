@@ -1,50 +1,18 @@
-menu={
-  "coffee":{
-    "buy":500,
-    "sell":1800
-  },
-  "kimBab":{
-    "buy":900,
-    "sell":1400
-  },
-  "bbaU":{
-    "buy":800,
-    "sell":1800
-  },
-  "doSirock":{
-    "buy":3500,
-    "sell":4000
-  },
-  "cola":{
-    "buy":700,
-    "sell":1500
-  },
-  "saeOuKkang":{
-    "buy":500,
-    "sell":1800
-  }
-}
-
-def getMenu():
-  return 1,2
-
-def sell():
-  menu, price = input().split()
-  price = int(price)
-
-# def buy():
-
-  
-while True:
-  action = input()
-
-  # if action == 'buy':
-    # buy()
-  if action == 'sell':
-    sell()
-  elif action == 'break':
-    exit()
-  else:
-    print('unknown input')
+americano=2500
+latte=3000
+cappuccino=3000
 
 
+americanoNumber=int(input('americano를 얼마나 사실건가요? : '))
+latteNumber=int(input('latte를 얼마나 사실건가요? : '))
+cappuccinoNumber=int(input('cappuccino를 얼마나 사실건가요? : '))
+
+money= int(input('돈을 넣어주세요!! : '))
+
+needfulMoney= (americano*americanoNumber)+(latte*latteNumber)+(cappuccino*cappuccinoNumber)
+
+if needfulMoney>money:
+  print(f'돈이 부족합니다!!\n부족한 금액 :{needfulMoney-money}')
+else:
+  returnMoney= format((money-needfulMoney), ',')
+  print(f'잔돈은 ₩{returnMoney} 입니다')
