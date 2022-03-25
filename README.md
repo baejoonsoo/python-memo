@@ -229,3 +229,22 @@
   - if else문을 줄여서 elif문으로 사용
   - if else문 안에 if else문을 사용하면 복잡해 보임
   - 더 짧고 깔끔하게 표현할 수 있음
+
+### 랜덤 함수
+
+- random.randint(a,b)
+
+  - a에서 b 사이의 임의의 숫자를 생성해준다
+
+    ```python
+    import random
+
+    random.randint(0,3)
+    ```
+
+- random.choice(['가위','바위','보'])
+  - 배열 안의 임의의 값 중 하나를 반환
+
+### 반복문
+
+- 특정 부분을 원하는 횟수만큼 반복하는 구문

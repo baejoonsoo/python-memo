@@ -1,12 +1,14 @@
-num=int(input())
+import random
 
-if num>=90:
-  print('A')
-elif num>=80:
-  print('B')
-elif num>=70:
-  print('C')
-elif num>=60:
-  print('D')
+chose=input("가위, 바위, 보 ==>")
+
+
+botChose=random.choice(['가위','바위','보'])
+
+if (chose=="가위" and botChose=="보") or (chose=="바위" and botChose=="가위") or (chose=="보" and botChose=="바위"):
+  print('이김')
+elif (chose==botChose) or (chose== botChose) or (chose==botChose):
+  print('비김')
 else:
-  print('F')
+  print('짐')
+
