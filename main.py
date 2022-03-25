@@ -1,6 +1,8 @@
 sum =0
 
-for num in range(1001,2000,2):
-  sum+=num
+for i in range(101):
+  if not i%4:
+    continue;
+  sum+=i
 
 print(sum)
