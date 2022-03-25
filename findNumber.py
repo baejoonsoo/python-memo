@@ -15,4 +15,3 @@ while True:
       print('컴퓨터의 숫자 보다 큽니다!!\n')
     else:
       print('컴퓨터의 숫자 보다 작습니다!!\n')
-    
