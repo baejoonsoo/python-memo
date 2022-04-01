@@ -305,12 +305,107 @@
   # [1,2,3,4,5,6]
   ```
 - 리스트의 곱셈
+
   ```python
   numList=[1,2,3]
   print(numList * 3)
   # [1,2,3, 1,2,3, 1,2,3]
   ```
 
-### 튜플
+- 리스트 값 변경하기
 
-### 딕셔너리
+  ```python
+  numList=[1,2,3]
+  numlist[1]=200
+  # [1,200,3]
+  ```
+
+  ```python
+  numList=[1,2,3]
+  numlist[1:2]=[200,201]
+  # [1,200,201,3]
+  ```
+
+  ```python
+  numList=[1,2,3]
+  numlist[2:3]=[200,201]
+  # [1,2,200,201]
+  ```
+
+- 리스트 값 삽입
+  - append(값) : 맨 뒤에 삽입
+  - insert(위치, 값) : 정해진 위치에 값 삽입하기
+    ```python
+    numList=[1,2,3]
+    numList.insert(1,123)
+    # [1,123,2,3]
+    ```
+- 리스트 값 삭제
+
+  - del() : 리스트의 항목 삭제
+
+    ```python
+    numList=[10,20,30]
+    del(numList[1])
+    print(numList)
+    # [10,30]
+    ```
+
+    ```python
+    numList=[10,20,30,40,50]
+    del(numList[1:4])
+    print(numList)
+    # [10,50]
+    ```
+
+    - 리스트를 넣으면 통채로 삭제됨
+
+  - remove(지울 값) : 리스트에서 특정 값 삭제
+
+    - 처음 만난 첫 값만 삭제
+
+    ```python
+    numList=[1,2,3]
+    numList.remove(1)
+    # [2,3]
+    ```
+
+    ```python
+    numList=[1,2,3,1,1]
+    numList.remove(1)
+    # [2,3,1,1]
+    ```
+
+  - pop() : 제일 뒤의 값을 뽑아내어 삭제함
+
+- 리스트에서 개수 세기
+
+  - count(찾을 값) : 찾을 값이 몇개인지 개수를 세서 알려줌
+    ```python
+    numList=[10,20,30,10,10]
+    numList.count(10)
+    # 3
+    ```
+
+- 리스트 정렬하기
+
+  - sort() : 리스트의 값을 오름차순 정렬함
+
+  - sort(reverse=True) : 리스트의 값을 내림차순 정렬함
+
+  - reverse() ; 리스트의 마지막 인덱스부터 위치가 만대로 됨
+
+    ```python
+    numList=[2,1,4,5,3]
+    reverse(numList)
+    # [3,5,4,1,2]
+    ```
+
+- sorted(list)
+  - 리스트는 그대로 두고 정렬된 결과만 반환함
+
+### 2차원 리스트
+
+- 1차원 리스트를 여러개 연결한 리스트
+- 2개의 첨자를 사용함
+  - list[행][열]
