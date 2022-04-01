@@ -1,7 +1,12 @@
 numList=[]
 
-for i in range(40):
-  numList.append(0)
+for i in range(5):
+  num=int(input('넣고 싶은 숫자를 입력하세요 : '))
+  numList.append(num)
 
+sum=0
 
-print(numList)
+for num in numList:
+  sum+=num
+
+print(sum)
