@@ -238,7 +238,7 @@
 
     ```python
     import random
-
+  
     random.randint(0,3)
     ```
 
@@ -450,7 +450,7 @@
   myList=list(myTuple)
   myList.append(4)
   myTuple=tuple(myList)
-
+  
   # (1,2,3,4)
   ```
 
@@ -463,10 +463,6 @@
 - 딕셔너리는 중괄호로 묶여 있음
 
 - Key, value의 쌍으로 이루어짐
-
-  ```python
-  #dict={key1:value1, key2:value2,...}
-  ```
 
 - 딕셔너리 생성하기
 
@@ -485,4 +481,43 @@
 
   - key값이 존재한다면 값이 수정되며 존재하지 않는다면 새로 추가된다
 
-- 딕셔너리는 값이 중복되지 않는다
+- 딕셔너리는 키 값이 중복되지 않는다
+
+- 딕셔너리 쌍을 삭제
+
+  ```python
+  del(dict[key])
+  ```
+
+- 딕셔너리에 접근할 때는 key값을 이용한다
+
+
+
+- dict.get(key)
+
+  - Dict[key]는 없는 값을 호출하면 오류 나지만 dict.get(key)는 없는 키를 호출하면 아무것도 반환하지 않는다
+
+- dict.keys()
+
+  - 딕셔너리의 모든 키를 뽑아서 반환함
+
+    ```python
+    list(dict.keys()) # 출력 결과 앞에 dict_keys가 붙지 않음
+    ```
+
+- dict.values()
+  - 딕셔너리의 모든 값을 뽑아서 반환함
+
+- dict.items()
+
+  - 튜플 형태로 구해 반환한다
+
+    ```python
+    dict.items()
+    # dict_items([('사번',3000),('이름':'홍길동'),('부서':'케이팝')])
+    ```
+
+- in
+  - 딕셔너리 안에 키가 있는지 확인 가능함
+  - 키가 있다면 True 없다면 False를 반환함
+  - if문과 함께 사용하는 경우가 많음
