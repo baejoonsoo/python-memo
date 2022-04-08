@@ -1,9 +1,13 @@
-import operator
+foods={
+  "떡볶이":"오뎅",
+  '짜장면':'단무지',
+  '라면':'김치',
+  '피자':'피클',
+  '맥주':'땅콩',
+  '치킨':'치킨무',
+  '삼겹살':'상추'
+}
 
-
-trainDIc,trainList={},[]
-
-trainDIc={'thomas':'토마스','edward':'애드워드','henry':'핸리'}
-trainList=sorted(trainDIc.items(),key=operator.itemgetter(0))
-
-print(trainList)
+while True:
+  food= input("궁합을 보고 싶은 음식을 입력하세요 : ")
+  print(f'{food}과 궁합이 맞는 음식은 {foods[food]}입니다')
