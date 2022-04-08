@@ -1,13 +1,18 @@
-foods={
-  "떡볶이":"오뎅",
-  '짜장면':'단무지',
-  '라면':'김치',
-  '피자':'피클',
-  '맥주':'땅콩',
-  '치킨':'치킨무',
-  '삼겹살':'상추'
-}
+dict={}
 
 while True:
-  food= input("궁합을 보고 싶은 음식을 입력하세요 : ")
-  print(f'{food}과 궁합이 맞는 음식은 {foods[food]}입니다')
+  name=input('입력 물품 => ')
+  if name=='z':
+    break;
+  num=int(input('재고량 => '))
+  dict[name]=num
+
+print("=== 물품의 재고량 확인 ===")
+
+while True:
+  name=input('칮을 물품 => ')
+
+  if name in dict:
+    print(f'{dict.get(name)}개 남았어요')
+  else:
+    print('그 물품은 없어요')

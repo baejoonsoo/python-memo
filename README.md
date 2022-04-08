@@ -491,8 +491,6 @@
 
 - 딕셔너리에 접근할 때는 key값을 이용한다
 
-
-
 - dict.get(key)
 
   - Dict[key]는 없는 값을 호출하면 오류 나지만 dict.get(key)는 없는 키를 호출하면 아무것도 반환하지 않는다
@@ -506,6 +504,7 @@
     ```
 
 - dict.values()
+
   - 딕셔너리의 모든 값을 뽑아서 반환함
 
 - dict.items()
@@ -521,3 +520,94 @@
   - 딕셔너리 안에 키가 있는지 확인 가능함
   - 키가 있다면 True 없다면 False를 반환함
   - if문과 함께 사용하는 경우가 많음
+
+### 리스트, 튜플, 딕셔너리의 심화
+
+- 키만 모아 놓은 딕셔너리의 특수한 형태
+
+  - 딕셔너리의 키는 중복되면 안되므로 세트에 들어 있는 값은 항상 유일
+
+  - 세트를 생성하려면 딕셔너리처럼 중괄호를 사용하지만 콜론(:) 없이 값을 입력
+
+  - 중복된 키는 자동으로 하나만 남음
+
+    ```python
+    mySet1={1,2,3,3,4,4}
+    # {1,2,3,4}
+    ```
+
+- 두 세트 사이의 교집합, 합집합, 차집합. 대칭 차집합을 구할 때
+
+  ```python
+  mySet1 = {1,2,3,4,5}
+  mySet2 = {4,5,6,7}
+
+  mySet1 & mySet2 #교집합 {4,5}
+  mySet1 | mySet2 #합집합 {1,2,3,4,5,6,7}
+  mySet1 = mySet2 #차집합 {1,2,3}
+  mySet1 ^ mySet2 #대칭 차집합 {1,2,3,6,7}
+  ```
+
+- 컴프리헨션
+
+  - 값이 순차적인 리스트를 한 줄로 만드는 간단한 방법
+
+  - 1-5까지 든 리스트 생성
+
+    - 반복문
+
+      ```python
+      numList=[]
+      for i in range(1,6):
+        numList.append(i)
+      ```
+
+    - 컴프리헨션
+
+      ```python
+      numList=[num for num in range(1,6)]
+      ```
+
+- 동시에 여러 리스트에 접근
+
+  - zip함수를 사용해 동시에 여러 리스트에 접근
+
+    ```python
+    foods=['떡볶이','라면','맥주','피자','치킨','삼겹살']
+    sides=['오뎅','단무지','김치']
+
+    for pair in zip(foods, sides):
+      print(pair)
+    ```
+
+  - 두 리스트를 튜플과 딕셔너리로 짝지을 때 zip() 함수 사용
+
+    ```python
+    foods=['떡볶이','라면','맥주','피자','치킨','삼겹살']
+    sides=['오뎅','단무지','김치']
+  
+    tupList=list(zip(foods,sides))
+    dicList=dict(zip(foods,sides))
+    ```
+
+- 리스트의 복사
+
+  - 얕은 복사
+
+    ```python
+    oldList=['a','b','c']
+    newList=oldList
+    print(newList) # [a,b,c]
+    oldList.append('d')
+    print(newList) # [a,b,c,d]
+    ```
+
+  - 깊은 복사
+
+    ```python
+    oldList=['a','b','c']
+    newList=oldList[:]
+    print(newList) # [a,b,c]
+    oldList.append('d')
+    print(newList) #[a,b,c]
+    ```
