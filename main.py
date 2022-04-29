@@ -1,8 +1,6 @@
-sum =0
+from ntpath import join
 
-for i in range(101):
-  if not i%4:
-    continue;
-  sum+=i
 
-print(sum)
+ss=input()
+
+print(''.join(ss.split(' ')))

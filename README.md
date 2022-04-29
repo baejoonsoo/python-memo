@@ -238,7 +238,7 @@
 
     ```python
     import random
-  
+    
     random.randint(0,3)
     ```
 
@@ -585,7 +585,7 @@
     ```python
     foods=['떡볶이','라면','맥주','피자','치킨','삼겹살']
     sides=['오뎅','단무지','김치']
-  
+    
     tupList=list(zip(foods,sides))
     dicList=dict(zip(foods,sides))
     ```
@@ -611,3 +611,39 @@
     oldList.append('d')
     print(newList) #[a,b,c]
     ```
+
+
+
+### 문자열
+
+- 문자열 함수
+
+  - upper() : 소문자를 대문자로
+
+  - lower() : 대문자를 소문자로
+
+  - swapcase() : 대소문자를 서로 변환
+
+  - title() : 첫글자를 대문자로
+
+    
+
+  - find() : 왼쪽에서부터 값을 찾아 위치를 반환함
+
+  - rfind() : 오른쪽에서부터 값을 찾아 위치를 반환함
+
+  - index() : 왼쪽에서부터 값을 찾아 인덱스를 반환함
+
+  - rindex() : 오른쪽에서부터 값을 찾아 인덱스를 반환함
+
+  - startswith() : 특정 단어로 시작하면 true를 반환
+
+  - endswith() : 특정 단어로 시작하면 true를 반환
+
+    
+
+  - strip() : 양쪽에서 특정 문자를 제거
+
+  - rstrip(): 오른쪽에서 특정 문자를 제거
+
+  - lstrip(): 왼쪽에서 특정 문자를 제거
