@@ -1,6 +1,11 @@
-from ntpath import join
+def func1():
+  a=10
+  print(f'func1()에서 a의 값 : {a}')
 
+def func2():
+  print(f'func2()에서 a의 값 :{a}')
 
-ss=input()
+a=20
 
-print(''.join(ss.split(' ')))
+func1()
+func2()

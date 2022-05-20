@@ -647,3 +647,239 @@
   - rstrip(): 오른쪽에서 특정 문자를 제거
 
   - lstrip(): 왼쪽에서 특정 문자를 제거
+
+
+
+### 문자열 분리 결합하기
+
+- split()
+  - 입력값을 기준으로 문자열을 쪼갬
+  - 기본값: 공백
+- splitline
+  - 줄을 단위로 쪼갬
+- join
+  - 배열을 하나의 문자열으로 연결함
+
+
+
+### 문자열 정렬하기
+
+- center()
+  - 매개값 길이의 string 가운데에 문자열을 배치한다
+- ljust()
+- rjust()
+- zfill()
+
+
+
+### 문자열 구성 파악하기
+
+- isdigit()
+  - 문자열이 숫자로 이루어져 있는지 체크
+- isalpha()
+  - 문자열이 알파벳으로 이루어져 있는지 체크
+- isalnum()
+  - 문자열이 영어, 한글 혹은 숫자로 되어있는지 체크
+- islower()
+  - 문자열이 모두 소문자인지 체크
+- isupper()
+  - 문자열이 모두 소문자인지 체크
+- isspace()
+  - 문자열이 모두 공백인지 체크
+
+
+
+### 함수
+
+- 무엇을 넣으면 그것이 처리되어 다시 어떤 것을 돌려주는 기능을 함
+- 내부에서 어떤 방식으로 작동하는지 등은 알 수 없기에 함수는 블랙박스라고 표현함
+
+
+
+- 함수 사용법
+
+  - 별도의 반환값이 없는 경우
+
+    ```python
+    함수이름()
+    ```
+
+  - 별도의 반환값이 있는 경우
+
+    ```python
+    변수이름 = 함수이름()
+    ```
+
+
+
+- 함수의 기본 형태
+
+  1. 함수를 입력받은 후
+  2. 매겨변수를 가공 및 처리한 후
+  3. 반환값을 돌려줌
+
+  ```pyth
+  def plus(v1, v2):
+  	result = 0
+  	result = v1+v2
+  	return result
+  	
+  hap = 0
+  
+  v1 = 100
+  v2 = 200
+  
+  hap = plus(v1, v2)
+  ```
+
+
+
+### 매개변수 전달의 다양한 방법
+
+- 함수의 매개 변수의 갯수를 정해 놓으면 함수를 호출할 때, 매개변수의 개수를 정확히 맞춰서 호출해야 함
+
+- 매개변수에 기복값을 설정할 수 있다
+
+  ```python
+  def para_func(v1,v2,v3=0):
+    result=v1+v2+v3
+    return result
+  
+  hap=0
+  
+  hap=para_func(10,20)
+  hap=para_func(10,20,30)
+  ```
+
+- 매개변수의 개수를 지정하지 않고 전달하는 방법
+
+  ```python
+  def para_func(*para): #매개변수를 튜플 형태로 전달 받음 (*)
+    result=0
+    
+    for num in para:
+      result=result+num
+     
+    return result
+  
+  hap=0
+  
+  hap=para_func(10,20)
+  hap=para_func(10,20,30)
+  hap=para_func(10,20,30,40,50,60,70,80,90)
+  ```
+
+- **로 매개변수를 받으면 딕셔너리 형태로 받는다
+
+  ```python
+  def dic_func(**para):
+    for k in para.keys():
+      print(f'{k} --> {para[k]}명입니다')
+      
+  dic_func(트와이스=9, 소녀시대=7,걸스데이=4,블랙핑크=4)
+  ```
+
+
+
+### 반환값이 없는 함수
+
+- 함수를 실행한 결과, 돌려줄 것이 없는 경우에는 return문을 생략함
+- 또는 반환값 없이 return만 써도 됨
+  - 대체로 return 없이 함수를 끝내는 경향이 있음
+- 반환값 없이 함수를 마치면 아무것도 반환하지 않고 함수를 끝냄
+
+
+
+### 반환값이 1개 있는 함수
+
+- 반환값이 1개 있는 함수
+- 함수에서 어떤 계산이나 작동을 한 후에 반환할 값이 있는 함수는 `return 반환값` 형태로 값을 반환한다
+
+
+
+### 반환값이 2개 있는 함수
+
+- 반환할 값이 2개라면 return 반환값1, 반환값2 형식으로 표현
+
+  ```python
+  def multi(v1,v2):
+    resList=[]
+    re1=v1+v2;
+    re2=v1-v2;
+    resList.append(re1)
+    resList.append(re2)
+    return resList
+  
+  myList=[]
+  hap,sub=0,0;
+  
+  myList=multi(10,20)
+  
+  hap=myList[0]
+  sub=myList[1]
+  print(f'multi()에서 돌려준 값 ==> {hap},{sub}')
+  ```
+
+  
+
+
+
+### pass 키워드
+
+- 함수의 이름과 형태만 만들어 놓고, 내부는 나중에 코딩하고 싶은 경우에 사용하는 키워드
+
+  ```python
+  def myFunc():
+    pass
+  ```
+
+- pass 키워드는 함수뿐 아니라, if문이나 반복문에서도 아무것도 안 한는 코드로 채울 떄에도 사용
+
+  ```python
+  for i in MyList:
+    pass
+  ```
+
+  
+
+### 지역변수와 전역변수
+
+- 지역변수
+  -  한정된 지역(local)에서만 사용되는 변수
+
+- 전역변수
+  - 프로그램 전체(global)에서 사용되는 변수
+
+
+
+- 지역변수와 전역변수의 이름이 같은 경우 지역변수가 우선됨
+
+
+
+### 재귀함수
+
+- 자기 자신을 호출하는 함수
+  - 문제를 직관적으로 이해하고 코드를 간결하게 작성할 수 있는 경우 사용
+- 재귀함수의 예
+  - n!를 계산하는 함수
+
+```python
+def fact(n):
+  if n==0 or n==1: return 1
+	return n*fact(n-1)
+```
+
+
+
+### global 예약어
+
+```python
+def func1():
+  global a
+  a=10
+  print(f'func1()에서 a의 값 : {a}')
+  
+def func2():
+  print(f'func2()에서의 a의 값 : {a}')
+```
+
