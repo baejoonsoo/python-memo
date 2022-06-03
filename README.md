@@ -883,3 +883,120 @@ def func2():
   print(f'func2()에서의 a의 값 : {a}')
 ```
 
+
+
+
+
+### 모듈의 종류
+
+- 표준 모듈, 사용자 정의 모듈, 서드 파티 모듈로 구분
+- 표준모듈 : 파이선이 제공하는 모듈
+- 사용자 정의 모듈 : 직접 만들어서 사용하는 모듈
+- 서드 파티 모듈 : 파이썬이 아닌 외부 회사나 단체에서 제공하는 모듈
+  - 파이썬 표준 모듈이 모든 기능을 제공 않음
+  - 서드 파티 모듈 덕분에 파이썬에서도 고급 프로그래밍 가능
+  - 게임 개발 기능이 있는 pyGame, 윈도창을 제공하는 PyGTK. 데이터 베이스를 기능의 SGLAlchemy등
+
+
+
+- 변수 전달은 값의 의한 전달(call by value)와 참조의 의한 전달(call by ref)
+
+
+
+- call by value : 별도의 메모리 공간을 확보
+- call by ref : 같은 메모리 공간 공유
+
+
+
+
+
+### 패키지
+
+- 여러 모듈을 모아놓은 폴더의 형태
+
+
+
+### 내부함수
+
+- 함수안에 함수가 있는 형태 : lamda, map...
+
+  ```py
+  def outFunc(v1, v2):
+    def isFunc(num1, num2):
+      return num1+num2
+   	return isFunc(v1,v2)
+  print(outFunc(10,20))
+  
+  # 외부에서는 inFUnc에 접근 불가
+  ```
+
+  
+
+
+
+
+
+### lambda
+
+```python
+def hap(n1,n2):
+  res=n1+n2
+  return res
+print(hap(1,2))
+```
+
+```python
+hap2=lambda num1,num2:num1+num2
+print(hap2(10,20))
+```
+
+
+
+
+
+```python
+#ist에 10씩 더하는 코드
+myList=[1,2,3,4,5]
+add10=lambda num:num+10
+myList-list(map(add10,myList))
+print(myList)
+```
+
+
+
+### map
+
+```python
+map(함수, 리스트)
+리스트에 각 요소를 함수에 매개값으로 넘겨 실행한다
+```
+
+
+
+
+
+### 제너레이터와 yield
+
+- yield: 함수를 종결하지 않으면서 값을 계속 반환
+
+  ```python
+  def genFunc():
+    yield 1
+    yield 2
+    yield 3
+    
+  print(genFunc())
+  #[1,2,3]
+  ```
+
+  
+
+
+
+### Tkinter
+
+- 파이썬이 기본으로 제공하는 GUI모듈
+- GUI를 위한 클래스를 포함
+- Gcl/Tk 언어를 파이썬에서 사용할 수 있게 해줌
+- Tkinter는 레이블(label), 버튼(button), 엔트리(entry),캔버스(canvas), 스크롤바(scrollbar) 이미지 등의 위젯(widget) 클래스를 제공
+  - 위젯이란 컴퓨터 사용자가 상호작용하는 인터페이스 요소
