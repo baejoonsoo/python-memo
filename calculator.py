@@ -1,22 +1,30 @@
-sum = 0
+sum=0
 
 while True:
-  cmd, num = input('실행할 연산과 피연산자를 입력하세요 -> ').split()
-  num=int(num)
+  print(f"\n현재값 : {sum}")
+  st=input('작업 명령 입력: ')
 
-  if cmd=='+':
-    sum+=num
-  elif cmd=='-':
-    sum-=num
-  elif cmd=='/':
-    sum/=num
-  elif cmd=='//':
-    sum //=num
-  elif cmd=='*':
-    sum*=num
-  elif cmd == '**':
-    sum **=num
-  elif cmd =='%':
-    sum %=num
-  
-  print(f'현재 값 : {sum}')
+  if st=='x':
+    break
+  if len(st.split())!=2:
+    print('잘못된 작업 명령!!')
+  else:
+    op,num=st.split()
+
+    if op=='+':
+      sum+=int(num)
+    elif op=='-':
+      sum-=int(num)
+    elif op=='*':
+      sum*=int(num)
+    elif op=='/':
+      if int(num)==0:
+        print('잘못된 작업 명령(0으로 나누기)!!')
+      else:
+        sum/=int(num)
+    elif op=='%':
+      sum%=int(num)
+    elif op=='=':
+      sum=int(num)
+    else:
+      print('잘못된 작업 명령!!')
