@@ -1,6 +1,3 @@
-import math
-
-
 toeic=[510,630,750,780,620,930,650,840,670]
 
 def frequency(toeic):
@@ -8,7 +5,6 @@ def frequency(toeic):
 
   for score in toeic:
     scoreList[(score//100)-1]+=1
-  print(scoreList)
   return scoreList
 
 def max_frequency(counters):
@@ -28,7 +24,7 @@ def min_frequency(counters):
 counters=frequency(toeic)
 
 scoreBase,maxCount=max_frequency(counters)
-print(f'가장 많은 빈도 : {scoreBase}, 빈도수 : {maxCount}')
+print(f'가장 많은 점수대= {scoreBase*100}, 빈도수= {maxCount}')
 
 scoreBase,minCount=min_frequency(counters)
-print(f'가장 적은 빈도 : {scoreBase}, 빈도수 : {minCount}')
+print(f'가장 작은 점수대= {scoreBase*100}, 빈도수= {minCount}')
