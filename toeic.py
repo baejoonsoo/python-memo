@@ -9,14 +9,12 @@ def frequency(toeic):
 
 def max_frequency(counters):
   maxCount = max(counters)
-  # pass
   yield counters.index(maxCount)+1
   yield maxCount
-  
 
 def min_frequency(counters):
   minCount = min(filter(lambda score:score!=0, counters))
-  
+
   yield counters.index(minCount)+1
   yield minCount
 

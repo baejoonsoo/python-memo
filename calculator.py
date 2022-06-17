@@ -13,8 +13,6 @@ while True:
 
     if op=='+':
       sum+=int(num)
-    elif op=='-':
-      sum-=int(num)
     elif op=='*':
       sum*=int(num)
     elif op=='/':
