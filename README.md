@@ -1167,6 +1167,8 @@ class 클래스명:
   - 속성 : 자동차의 모양 , X,Y 이동 --> 변수(필드)로 생성
   - 기능 이동하기() --> 함수(메소드)로 구현
 
+
+
 #### 생성자
 
 - 객체를 생성하면 무조건 호출되는 메소드를 의미함
@@ -1181,6 +1183,118 @@ class 클래스명:
   class A:
     def __init__(self):
       #초기화할 코드 입력
+  ```
+
+
+
+
+#### `__del__()`메서드
+
+- `__init__()`메소드가 생성자라면, `__del__()`메소드는 소멸자라고 부름
+-  `__del__()`는 객체가 제거될 때 자동으로 호출됨
+  - 객체를 제거할 때는 del(객체)로 지우는데, ㅇ;때 호출됨
+
+
+
+```python
+class Rabbit:
+  shape=''
+  
+  def __del__(self):
+    print('이제'+self.shape+'는 자유에요')
+```
+
+
+
+
+
+
+
+####  `__add__()`메소드
+
+- 객체끼리 덧셈을 할 경우에 실행되는 메소드
+- 일반적으로 덧셈연산은 숫자나 문자열 등에만 작동하지만
+  -  `__add__()`메소드를 작성해 놓으면 객체 사이의 덧셈 작업도 가능함
+
+```python
+class Rabbit:
+  shape=''
+  
+  def __add__(self, other):
+    print(f'객체 {self.shape}와 {other.shape}가 친구가 되었습니다')
+    
+
+  
+```
+
+
+
+
+
+#### 인스턴스 변수
+
+- 
+
+
+
+#### 클래스 변수
+
+- 클래스 안에 공간이 할당된 변수, 여러 인스턴스가 클래스 변수 공간 함께 사용
+
+
+
+
+
+### 클래스와 상속
+
+- 상속
+  - 기존의 클래스가 가지고 있는 필드와 메소드를 그대로 물려받는 새로운 클래스를 만드는 것을 의미함
+  - 상속을 받은 이후에는 새로운 클래스에서 추가로 속성이나 행동을 만들어서 사용할 수도 있음
+
+- 상속의 개념
+  - 공통 내용을 부모 클래스에 두고 송속을 받음으로써 일관되고 효율적인 프로그래밍 가능
+
+
+
+```python
+class 서브_클래스(슈퍼_클래스):
+  pass
+```
+
+
+
+- 메소드 오버라이딩
+
+  ```python
+  class Car:
+    speed=0
+    def upSpeed(self,value):
+      self.speed+=value
+      print(f'현재 속도(슈퍼클래스) : {self.speed}')
+  
+  class Sedan(Car):
+    
+    #overriding
+    def upSpeed(self,value):
+      self.speed+=value
+      
+      if self.spped > 150:
+        self.spped=150
+         print(f'현재 속도(서브클래스) : {self.speed}')
+          
+  class Truck(Car):
+    pass
+  
+  sedan1,truck1=None,None
+  
+  sedan1=Sedan()
+  truck1=Truck()
+  
+  print('트럭->',end='')
+  truck1.upSpeed(200)
+  
+  print('승용차->',end='')
+  sedan1.upSpeed(200)
   ```
 
   
