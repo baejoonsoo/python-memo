@@ -1233,7 +1233,8 @@ class Rabbit:
 
 #### 인스턴스 변수
 
-- 
+- 클래스로 만든 객체
+- 클래스와는 분리되어 있음
 
 
 
@@ -1297,4 +1298,30 @@ class 서브_클래스(슈퍼_클래스):
   sedan1.upSpeed(200)
   ```
 
+
+
+#### super()
+
+- 서브 클래스에서 메소드 오버라이딩을 할 때, 부모 클래스의 메소드나 속성을 사용해야 하는 경우 super() 메소드를 사용해 접근 가능
+
+```python
+class Car:
+  value='슈퍼 값'
   
+  def carMethod(self):
+    print('슈퍼 클래스 메소드 실행')
+    
+class Sedan(Car):
+  value='서브 값'
+  
+  def carMethod(self):
+    super().carMethod() # Car 클래스의 carMethod가 실행됨
+    print('서브 클래스 메소드 실행')
+    print(super().value)
+
+sedan1=Sedan()
+sedan1.carMethod()
+```
+
+
+
